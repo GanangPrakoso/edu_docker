@@ -1,0 +1,22 @@
+services:
+  orchestrator:
+    build: ./orchestrator
+    ports:
+      - "5003:4000"
+    environment:
+      - APP_SERVICE_URL=http://app:4002
+      - USER_SERVICE_URL=http://user:4001
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=redis://:authpassword@cache:6379/0
+  app:
+    build: ./services/app
+    ports:
+      - "5002:4002"
+  user:
+    build: ./services/user
+    ports:
+      - "5001:4001"
+  cache:
+    image: redis:7.2.0
+    ports:
+      - "7001:6379"
