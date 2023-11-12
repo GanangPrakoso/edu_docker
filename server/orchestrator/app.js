@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.get("/", (_, res) => {
   res.json({
-    message: "orchestrator is running asdfsdfdsf",
+    message: "orchestrator is running!",
     os: os.platform(),
   });
 });
