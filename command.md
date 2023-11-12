@@ -8,8 +8,8 @@
 
 - Container
 
-  - List of running containers: `docker container ps`
-  - List of all containers: `docker container ps -a`
+  - List of running containers: `docker container ls`
+  - List of all containers: `docker container ls -a`
   - Remove container: `docker container rm [container_id]`
   - Create container: `docker container create --name [containerName/ID] -p [localPort:containerPort] [imageName]`
   - Start container: `docker container start [containerName]`
